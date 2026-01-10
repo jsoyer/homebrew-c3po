@@ -156,7 +156,7 @@ class Sqlit < Formula
   def post_install
     # Install pyarrow using pre-built wheels after main installation
     # This avoids Homebrew's --no-binary restriction
-    system libexec/"bin/pip", "install", "--no-deps", "pyarrow"
+    system libexec/"bin/python", "-m", "pip", "install", "--no-deps", "pyarrow"
   end
 
   test do
