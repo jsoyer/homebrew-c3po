@@ -7,6 +7,7 @@ class Sqlit < Formula
   sha256 "df90abb5a648a27d9982c9e2ddc903ab6948c831f2ea3fea58df712c175b5197"
   license "MIT"
 
+  depends_on "apache-arrow"
   depends_on "cmake" => :build
   depends_on "python@3.12"
   depends_on "rust" => :build
@@ -24,11 +25,6 @@ class Sqlit < Formula
   resource "pyperclip" do
     url "https://files.pythonhosted.org/packages/30/23/2f0a3efc4d6a32f3b63cdff36cd398d9701d26cda58e3ab97ac79fb5e60d/pyperclip-1.9.0.tar.gz"
     sha256 "b7de0142ddc81bfc5c7507eea19da920b92252b548b96186caf94a5e2527d310"
-  end
-
-  resource "pyarrow" do
-    url "https://files.pythonhosted.org/packages/30/53/04a7fdc63e6056116c9ddc8b43bc28c12cdd181b85cbeadb79278475f3ae/pyarrow-22.0.0.tar.gz"
-    sha256 "3d600dc583260d845c7d8a6db540339dd883081925da2bd1c5cb808f720b3cd9"
   end
 
   resource "keyring" do
@@ -132,7 +128,15 @@ class Sqlit < Formula
   end
 
   def install
+    # Set environment variables for pyarrow to use system Arrow libraries
+    ENV["PYARROW_WITH_PARQUET"] = "1"
+    ENV["PYARROW_CMAKE_OPTIONS"] = "-DARROW_HOME=#{Formula["apache-arrow"].opt_prefix}"
+
     virtualenv_install_with_resources
+
+    # Install pyarrow separately using system Arrow libraries
+    venv = virtualenv_create(libexec, "python3.12")
+    venv.pip_install "pyarrow"
   end
 
   test do
