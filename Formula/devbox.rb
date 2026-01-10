@@ -10,6 +10,12 @@ class Devbox < Formula
   # When updating the version here, make sure to also update the SHA-256 checksums below
   # using the checksums.txt file provided with the GitHub release.
 
+  bottle do
+    root_url "https://github.com/jsoyer/homebrew-c3po/releases/download/devbox-0.16.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "ed9c65f01d663854353465932de31113c85c9be79a5649c820d86a2221b4170a"
+  end
+
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/jetify-com/devbox/releases/download/#{version}/devbox_#{version}_darwin_amd64.tar.gz",
       verified: "github.com/jetify-com/devbox/"
