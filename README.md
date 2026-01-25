@@ -83,6 +83,51 @@ sqlit --help                       # See all options
 
 ---
 
+### 🍓 Strawberry
+
+**Cross-platform Music Player with iPod and Discord Support**
+
+<img src="https://img.shields.io/badge/version-1.2.17-blue" alt="Version"> <img src="https://img.shields.io/badge/bottle-available-green" alt="Bottle Available"> <img src="https://img.shields.io/badge/platform-macOS-lightgrey" alt="Platform">
+
+Strawberry is a music player and music collection organizer. It is a fork of Clementine released in 2018 aimed at music collectors and audiophiles.
+
+**Features:**
+- Play and organize music
+- Edit tags on audio files
+- Album cover art from various sources
+- Support for high resolution audio
+- Audio CD playback and ripping
+- Native desktop notifications
+- Visualizations from projectM
+- Lyrics from multiple sources
+- iPod, MTP and mass storage USB device support
+- Scrobbler supporting Last.fm, Libre.fm and ListenBrainz
+- Discord Rich Presence support
+- Subsonic/Airsonic/Navidrome/Gonic streaming support
+- Tidal and Qobuz streaming support
+
+**Installation:**
+
+```bash
+brew install jsoyer/c3po/strawberry
+```
+
+**Quick Start:**
+
+After installation, add these environment variables to your shell profile for full GStreamer support:
+
+```bash
+export GIO_EXTRA_MODULES="/opt/homebrew/lib/gio/modules"
+export GST_PLUGIN_SCANNER="/opt/homebrew/libexec/gstreamer-1.0/gst-plugin-scanner"
+export GST_PLUGIN_PATH="/opt/homebrew/lib/gstreamer-1.0"
+```
+
+Then launch Strawberry from your Applications folder or via Spotlight.
+
+**More info:** [strawberrymusicplayer.org](https://www.strawberrymusicplayer.org/)
+
+---
+
 ## 🚀 Why Use This Tap?
 
 - ✅ **Pre-built Bottles** - Fast installation with pre-compiled binaries (where available)
@@ -97,13 +142,13 @@ sqlit --help                       # See all options
 
 ```bash
 brew update
-brew upgrade jsoyer/c3po/devbox jsoyer/c3po/sqlit
+brew upgrade jsoyer/c3po/devbox jsoyer/c3po/sqlit jsoyer/c3po/strawberry
 ```
 
 ### Uninstall
 
 ```bash
-brew uninstall devbox sqlit
+brew uninstall devbox sqlit strawberry
 brew untap jsoyer/c3po
 ```
 
@@ -113,6 +158,7 @@ brew untap jsoyer/c3po
 |---------|------|--------------|--------------|
 | Devbox  | ~29MB | ~2 seconds (bottle) | None |
 | Sqlit   | ~202MB | ~3 minutes | Python 3.12, Rust |
+| Strawberry | ~18.5MB | ~4 minutes (bottle) | Qt6, GStreamer, many audio libs |
 
 ## 🤝 Contributing
 
@@ -165,6 +211,7 @@ This tap is licensed under the MIT License. Individual formulas may have their o
 
 - **Devbox** by [Jetify](https://www.jetify.com/)
 - **Sqlit** by [Maxteabag](https://github.com/Maxteabag)
+- **Strawberry** by [Jonas Kvinge](https://github.com/strawberrymusicplayer/strawberry)
 - Maintained with ❤️ by [Jerome Soyer](https://github.com/jsoyer)
 
 ---
