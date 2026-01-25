@@ -1,6 +1,6 @@
-# 🤖 Homebrew C3PO
+# 🍺 Homebrew Tap
 
-> *Your friendly neighborhood Homebrew tap for developer tools*
+> *A personal Homebrew tap for useful developer tools*
 
 A curated collection of powerful development tools, packaged and ready to install on your Mac.
 
@@ -9,7 +9,7 @@ A curated collection of powerful development tools, packaged and ready to instal
 Add this tap to your Homebrew:
 
 ```bash
-brew tap jsoyer/c3po
+brew tap jsoyer/tap
 ```
 
 ## 🛠️ Available Formulas
@@ -31,7 +31,7 @@ Devbox creates isolated development environments without containers. Perfect for
 **Installation:**
 
 ```bash
-brew install jsoyer/c3po/devbox
+brew install jsoyer/tap/devbox
 ```
 
 **Quick Start:**
@@ -68,7 +68,7 @@ PostgreSQL • MySQL • SQLite • MariaDB • CockroachDB • Oracle • SQL S
 **Installation:**
 
 ```bash
-brew install jsoyer/c3po/sqlit
+brew install jsoyer/tap/sqlit
 ```
 
 **Quick Start:**
@@ -109,7 +109,7 @@ Strawberry is a music player and music collection organizer. It is a fork of Cle
 **Installation:**
 
 ```bash
-brew install jsoyer/c3po/strawberry
+brew install jsoyer/tap/strawberry
 ```
 
 **Quick Start:**
@@ -146,7 +146,7 @@ A shared library to access the contents of an iPod. It supports reading and writ
 **Installation:**
 
 ```bash
-brew install jsoyer/c3po/libgpod
+brew install jsoyer/tap/libgpod
 ```
 
 **Usage:**
@@ -171,14 +171,14 @@ libgpod is a C library used by applications like Strawberry, gtkpod, and Rhythmb
 
 ```bash
 brew update
-brew upgrade jsoyer/c3po/devbox jsoyer/c3po/sqlit jsoyer/c3po/strawberry jsoyer/c3po/libgpod
+brew upgrade jsoyer/tap/devbox jsoyer/tap/sqlit jsoyer/tap/strawberry jsoyer/tap/libgpod
 ```
 
 ### Uninstall
 
 ```bash
 brew uninstall devbox sqlit strawberry libgpod
-brew untap jsoyer/c3po
+brew untap jsoyer/tap
 ```
 
 ## 📊 Installation Stats
@@ -194,7 +194,7 @@ brew untap jsoyer/c3po
 
 Found a bug? Have a suggestion? Want to add a new formula?
 
-1. 🐛 [Open an issue](https://github.com/jsoyer/homebrew-c3po/issues)
+1. 🐛 [Open an issue](https://github.com/jsoyer/homebrew-tap/issues)
 2. 🔧 Submit a pull request
 3. 💬 Start a discussion
 
