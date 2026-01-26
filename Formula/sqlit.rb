@@ -14,8 +14,8 @@ class Sqlit < Formula
 
   bottle do
     root_url "https://github.com/jsoyer/homebrew-tap/releases/download/sqlit-1.2.5"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe: "d4606048807109e6404fc80a649d7ac17389bfe3a4baef9020b6fa802956e150"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe: "3bd87d0fe31fed8a3675e85164e060a47be870cb5bcb7e3d857f4c2563207ff1"
   end
 
   depends_on "python@3.12"
@@ -162,9 +162,9 @@ class Sqlit < Formula
 
   def install
     virtualenv_install_with_resources
-    # Install pyarrow using pre-built wheels
-    # This must be in install (not post_install) to be included in bottles
-    system libexec/"bin/python", "-m", "pip", "install", "--no-deps", "pyarrow"
+    # Install pyarrow using pre-built wheels with compatible version
+    # textual-fastdatatable requires pyarrow>=18.1.0,<22
+    system libexec/"bin/python", "-m", "pip", "install", "--no-deps", "pyarrow>=18.1.0,<22"
   end
 
   test do
