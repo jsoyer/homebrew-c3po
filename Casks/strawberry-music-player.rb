@@ -17,6 +17,14 @@ cask "strawberry-music-player" do
 
   depends_on macos: ">= :ventura"
   depends_on arch: :arm64
+  depends_on formula: [
+    "qt@6",
+    "gstreamer",
+    "glib",
+    "sqlite",
+    "taglib",
+    "gettext",
+  ]
 
   app "Strawberry.app"
 
