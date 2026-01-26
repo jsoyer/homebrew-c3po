@@ -1,7 +1,7 @@
 # Copyright Jerome Soyer
 # SPDX-License-Identifier: Apache-2.0
 
-class Strawberry < Formula
+class StrawberryMusicPlayer < Formula
   desc "Cross-platform music player and music collection organizer"
   homepage "https://www.strawberrymusicplayer.org/"
   url "https://files.strawberrymusicplayer.org/strawberry-1.2.17.tar.xz"
@@ -15,7 +15,7 @@ class Strawberry < Formula
   end
 
   bottle do
-    root_url "https://github.com/jsoyer/homebrew-tap/releases/download/strawberry-1.2.17"
+    root_url "https://github.com/jsoyer/homebrew-tap/releases/download/strawberry-music-player-1.2.17"
     sha256 cellar: :any, arm64_tahoe: "9a6eb1a68d1a8546e97c5a4886aa5df97cf39eb583e81511f4f2799d90975a13"
   end
 
