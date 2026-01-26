@@ -83,7 +83,7 @@ sqlit --help                       # See all options
 
 ---
 
-### 🍓 Strawberry
+### 🍓 Strawberry Music Player
 
 **Cross-platform Music Player with iPod and Discord Support**
 
@@ -109,7 +109,7 @@ Strawberry is a music player and music collection organizer. It is a fork of Cle
 **Installation:**
 
 ```bash
-brew install jsoyer/tap/strawberry
+brew install jsoyer/tap/strawberry-music-player
 ```
 
 **Quick Start:**
@@ -171,13 +171,13 @@ libgpod is a C library used by applications like Strawberry, gtkpod, and Rhythmb
 
 ```bash
 brew update
-brew upgrade jsoyer/tap/devbox jsoyer/tap/sqlit jsoyer/tap/strawberry jsoyer/tap/libgpod
+brew upgrade jsoyer/tap/devbox jsoyer/tap/sqlit jsoyer/tap/strawberry-music-player jsoyer/tap/libgpod
 ```
 
 ### Uninstall
 
 ```bash
-brew uninstall devbox sqlit strawberry libgpod
+brew uninstall devbox sqlit strawberry-music-player libgpod
 brew untap jsoyer/tap
 ```
 
@@ -186,9 +186,9 @@ brew untap jsoyer/tap
 | Formula | Size | Install Time | Dependencies |
 |---------|------|--------------|--------------|
 | Devbox  | ~29MB | ~2 seconds (bottle) | None |
-| Sqlit   | ~202MB | ~3 minutes | Python 3.12, Rust |
-| Strawberry | ~18.5MB | ~4 minutes (bottle) | Qt6, GStreamer, many audio libs |
-| libgpod | ~1MB | ~2 minutes | glib, libplist, taglib |
+| Sqlit   | ~202MB | ~3 minutes (bottle) | Python 3.12, Rust |
+| Strawberry Music Player | ~18.5MB | ~4 minutes (bottle) | Qt6, GStreamer, many audio libs |
+| libgpod | ~1MB | ~2 minutes (bottle) | glib, libplist, taglib |
 
 ## 🤝 Contributing
 
@@ -241,7 +241,7 @@ This tap is licensed under the MIT License. Individual formulas may have their o
 
 - **Devbox** by [Jetify](https://www.jetify.com/)
 - **Sqlit** by [Maxteabag](https://github.com/Maxteabag)
-- **Strawberry** by [Jonas Kvinge](https://github.com/strawberrymusicplayer/strawberry)
+- **Strawberry Music Player** by [Jonas Kvinge](https://github.com/strawberrymusicplayer/strawberry)
 - **libgpod** by the [gtkpod team](https://sourceforge.net/projects/gtkpod/)
 - Maintained with ❤️ by [Jerome Soyer](https://github.com/jsoyer)
 
