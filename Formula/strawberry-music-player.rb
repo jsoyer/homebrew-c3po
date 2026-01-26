@@ -16,7 +16,7 @@ class StrawberryMusicPlayer < Formula
 
   bottle do
     root_url "https://github.com/jsoyer/homebrew-tap/releases/download/strawberry-music-player-1.2.17"
-    sha256 cellar: :any, arm64_tahoe: "9a6eb1a68d1a8546e97c5a4886aa5df97cf39eb583e81511f4f2799d90975a13"
+    sha256 cellar: :any, arm64_tahoe: "8ab20f44c581fb1eef1ef5ceeeef0ad712f7c0d824a4bee83facbc05b708bae2"
   end
 
   depends_on "autoconf" => :build
