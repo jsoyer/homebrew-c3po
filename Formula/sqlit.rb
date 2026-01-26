@@ -14,7 +14,8 @@ class Sqlit < Formula
 
   bottle do
     root_url "https://github.com/jsoyer/homebrew-tap/releases/download/sqlit-1.2.5"
-    sha256 cellar: :any, arm64_tahoe: "25bb7f7212cbabbe523dc5f951ca57a7717194be6e8183dd4894ba34dac58d08"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe: "d4606048807109e6404fc80a649d7ac17389bfe3a4baef9020b6fa802956e150"
   end
 
   depends_on "python@3.12"
@@ -161,11 +162,8 @@ class Sqlit < Formula
 
   def install
     virtualenv_install_with_resources
-  end
-
-  def post_install
-    # Install pyarrow using pre-built wheels after main installation
-    # This avoids Homebrew's --no-binary restriction
+    # Install pyarrow using pre-built wheels
+    # This must be in install (not post_install) to be included in bottles
     system libexec/"bin/python", "-m", "pip", "install", "--no-deps", "pyarrow"
   end
 
