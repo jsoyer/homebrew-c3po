@@ -163,8 +163,23 @@ class StrawberryMusicPlayer < Formula
     end
   end
 
+  def post_install
+    # Create symlink in /Applications for easy access
+    if OS.mac?
+      app_source = prefix/"Strawberry.app"
+      app_target = Pathname.new("/Applications/Strawberry.app")
+      if app_source.exist? && !app_target.exist?
+        system "ln", "-sf", app_source, app_target
+      end
+    end
+  end
+
   def caveats
     <<~EOS
+      Strawberry.app has been linked to /Applications.
+      If the symlink was not created automatically, you can create it manually:
+        ln -sf #{opt_prefix}/Strawberry.app /Applications/Strawberry.app
+
       Note: Some GStreamer plugins may not be available through Homebrew.
       For full codec support, you may need to install additional GStreamer plugins.
 
