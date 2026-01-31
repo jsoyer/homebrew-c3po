@@ -7,7 +7,7 @@ cask "strawberry-music-player" do
 
   url "https://github.com/jsoyer/homebrew-tap/releases/download/strawberry-music-player-#{version}/Strawberry-Music-Player-#{version}-arm64.dmg"
   name "Strawberry Music Player"
-  desc "Cross-platform music player with iPod support"
+  desc "Cross-platform music player with iPod support (standalone)"
   homepage "https://www.strawberrymusicplayer.org/"
 
   livecheck do
@@ -17,14 +17,7 @@ cask "strawberry-music-player" do
 
   depends_on macos: ">= :ventura"
   depends_on arch: :arm64
-  depends_on formula: [
-    "qt@6",
-    "gstreamer",
-    "glib",
-    "sqlite",
-    "taglib",
-    "gettext",
-  ]
+  # Standalone build - all dependencies bundled in the app
 
   app "Strawberry.app"
 
@@ -36,14 +29,7 @@ cask "strawberry-music-player" do
   ]
 
   caveats <<~EOS
-    This version includes iPod support via libgpod.
-
-    Some GStreamer plugins may not be available through Homebrew.
-    For full codec support, you may need to install additional GStreamer plugins.
-
-    To set up GStreamer environment variables, add to your shell profile:
-      export GIO_EXTRA_MODULES="$(brew --prefix)/lib/gio/modules"
-      export GST_PLUGIN_SCANNER="$(brew --prefix)/libexec/gstreamer-1.0/gst-plugin-scanner"
-      export GST_PLUGIN_PATH="$(brew --prefix)/lib/gstreamer-1.0"
+    This is a standalone build with all dependencies bundled.
+    Includes iPod support via libgpod.
   EOS
 end

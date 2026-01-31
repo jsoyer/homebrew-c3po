@@ -23,6 +23,9 @@ brew install --cask ./Casks/cask-name.rb
 
 # Update bottle checksums after rebuilding
 brew bottle Formula/formula-name.rb
+
+# Build standalone DMG for Strawberry (requires APPLE_DEVELOPER_ID for signing)
+APPLE_DEVELOPER_ID="Developer ID Application: Name" ./scripts/build-standalone-dmg.sh
 ```
 
 ## Architecture
@@ -30,6 +33,7 @@ brew bottle Formula/formula-name.rb
 ### Directory Structure
 - `Formula/` - Homebrew formulas (Ruby files that build from source)
 - `Casks/` - Homebrew casks (Ruby files that install pre-built DMG/pkg)
+- `scripts/` - Build scripts for standalone DMG creation
 
 ### Formulas
 - **devbox.rb** - Pre-built binary download with multi-platform support (macOS/Linux, Intel/ARM)
@@ -38,7 +42,10 @@ brew bottle Formula/formula-name.rb
 - **libgpod.rb** - Standalone iPod library with pkg-config compatibility wrapper for libplist
 
 ### Casks
-- **strawberry-music-player.rb** - Pre-built DMG install (ARM64 only, faster than formula)
+- **strawberry-music-player.rb** - Standalone DMG with all dependencies bundled (ARM64 only)
+
+### Scripts
+- **build-standalone-dmg.sh** - Builds Strawberry with bundled dependencies from strawberry-macos-dependencies
 
 ## Formula Conventions Used
 
